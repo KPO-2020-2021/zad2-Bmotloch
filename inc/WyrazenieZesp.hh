@@ -1,9 +1,9 @@
 #ifndef WYRAZENIEZESP_HH
 #define WYRAZENIEZESP_HH
-
-
-
 #include "LZespolona.hh"
+using namespace std;
+
+
 
 
 /*!
@@ -16,6 +16,7 @@ enum Operator { Op_Dodaj, Op_Odejmij, Op_Mnoz, Op_Dziel };
 /*
  * Modeluje pojecie dwuargumentowego wyrazenia zespolonego
  */
+struct LZespolona;
 struct WyrazenieZesp {
   LZespolona   Arg1;   // Pierwszy argument wyrazenia arytmetycznego
   Operator     Op;     // Opertor wyrazenia arytmetycznego
@@ -32,4 +33,12 @@ struct WyrazenieZesp {
 void Wyswietl(WyrazenieZesp  WyrZ);
 LZespolona Oblicz(WyrazenieZesp  WyrZ);
 
+
+ostream & operator << (ostream & strumien, const Operator op);
+
+ostream & operator << (ostream & strumien, WyrazenieZesp Wyr);
+
 #endif
+
+
+

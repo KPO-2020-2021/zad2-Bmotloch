@@ -31,11 +31,11 @@ int main(int argc, char **argv)
   cout << " Start testu arytmetyki zespolonej: " << argv[1] << endl;
   cout << endl;
 
-  WyrazenieZesp   WyrZ_PytanieTestowe;
-  
-  while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe)) {
-    cout << " Czesc rzeczywista pierwszego argumentu: ";
-    cout << WyrZ_PytanieTestowe.Arg1.re << endl;
+  WyrazenieZesp   Pytanie;
+  while (PobierzNastpnePytanie(&BazaT,&Pytanie)) {
+    cout << Pytanie<<endl;
+    cout << "Podaj odpowiedz: "<<endl;
+    
   }
 
   

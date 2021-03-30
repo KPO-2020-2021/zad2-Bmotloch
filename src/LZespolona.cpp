@@ -1,8 +1,6 @@
 #include "LZespolona.hh"
-#include <cmath>
-#include <iostream>
 #define MIN_DIFF 0.00001
-
+ using namespace std;
 /*!
  * Realizuje porównanie dwoch liczb zespolonych.
  * Argumenty:
@@ -67,6 +65,7 @@ LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2){
   return Wynik;
 }
 
+
 /*!
  * Realizuje dzielenie liczby zespolonej przez skakar.
  * Argumenty:
@@ -83,6 +82,8 @@ LZespolona  operator / (LZespolona  Skl1,  double  Skl2){
   return Wynik;
 }
 
-void Wyswietl(LZespolona){
-
+ostream& operator << (ostream &strumien, LZespolona &Lzesp)
+{
+  strumien << "(" << Lzesp.re << showpos << Lzesp.im << "i)" << noshowpos;
+  return strumien;
 }
