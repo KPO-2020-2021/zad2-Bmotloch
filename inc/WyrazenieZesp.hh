@@ -16,7 +16,6 @@ enum Operator { Op_Dodaj, Op_Odejmij, Op_Mnoz, Op_Dziel };
 /*
  * Modeluje pojecie dwuargumentowego wyrazenia zespolonego
  */
-struct LZespolona;
 struct WyrazenieZesp {
   LZespolona   Arg1;   // Pierwszy argument wyrazenia arytmetycznego
   Operator     Op;     // Opertor wyrazenia arytmetycznego
