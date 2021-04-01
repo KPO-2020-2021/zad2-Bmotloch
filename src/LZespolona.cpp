@@ -86,9 +86,23 @@ LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2){
   Wynik.im = Wynik.im/(Modul2(Skl2));
   return Wynik;
 }
-LZespolona Sprzezenie(LZespolona Skl2){
-  Skl2.im=-(Skl2.im);
-  return Skl2;
+
+LZespolona operator += (LZespolona Skl1, LZespolona Skl2){
+Skl1.re+=Skl2.re;
+Skl1.im+=Skl2.im;
+return Skl1;
+}
+
+LZespolona operator /= (LZespolona Skl1, LZespolona Skl2){
+LZespolona Wynik;
+if (Skl2.re == 0 || Skl2.im == 0){
+    cerr<< "Dzielenie przez 0!"<<endl;
+  }
+  Wynik= operator * (LZespolona(Skl1), Sprzezenie(Skl2));
+  Wynik.re=Wynik.re/(Modul2(Skl2));
+  Wynik.im = Wynik.im/(Modul2(Skl2));
+Skl1=Wynik;
+return Skl1; 
 }
 
 double Modul2(LZespolona Skl2){
@@ -96,6 +110,12 @@ double Wynik;
 Wynik = pow(Skl2.re,2)+pow(Skl2.im,2);
 return Wynik;
 }
+
+LZespolona Sprzezenie(LZespolona Skl2){
+  Skl2.im=-(Skl2.im);
+  return Skl2;
+}
+
 
 /*
 *przeciazenie wyswietlania liczby zespolonej
